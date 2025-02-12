@@ -1,9 +1,16 @@
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
+
+const App = () => {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
