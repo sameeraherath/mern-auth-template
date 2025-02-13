@@ -25,7 +25,7 @@ const SignIn = () => {
     try {
       // Send POST request to sign in
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signin",
+        `${import.meta.env.VITE_API_URL}/api/auth/signin`,
         credentials
       );
       // Store token in local storage

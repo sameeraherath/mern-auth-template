@@ -1,7 +1,9 @@
 import axios from "axios";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
   // State to hold form data
   const [formData, setFormData] = useState({
     username: "",
@@ -20,10 +22,11 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        `${import.meta.env.VITE_API_URL}/api/auth/signup`,
         formData
       );
       alert(response.data.message);
+      navigate("/Home");
     } catch (error) {
       alert(error.response.data.message);
     }
