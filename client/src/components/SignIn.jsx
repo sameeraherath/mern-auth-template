@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SignIn = () => {
+  const navigate = useNavigate();
   // State to store email and password
   const [credentials, setCredentials] = useState({
     email: "",
@@ -29,6 +31,7 @@ const SignIn = () => {
       // Store token in local storage
       localStorage.setItem("authToken", response.data.token);
       alert("Logged in successfully");
+      navigate("/Home");
     } catch (error) {
       // Show error message
       alert(error.response.data.message);
