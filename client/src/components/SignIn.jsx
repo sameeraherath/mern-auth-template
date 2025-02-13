@@ -23,7 +23,7 @@ const SignIn = () => {
     try {
       // Send POST request to sign in
       const response = await axios.post(
-        "http://localhost:5173/api/auth/signin",
+        "http://localhost:5000/api/auth/signin",
         credentials
       );
       // Store token in local storage

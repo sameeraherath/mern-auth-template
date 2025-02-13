@@ -20,7 +20,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5173/api/auth/signup",
+        "http://localhost:5000/api/auth/signup",
         formData
       );
       alert(response.data.message);
